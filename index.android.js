@@ -4,9 +4,9 @@
  * @flow
  */
 
-import { AppRegistry } from 'react-native'
-import LearnHelper from './src'
+import { AppRegistry } from 'react-native';
+import LearnHelper from './src';
 
-export default LearnHelper
+export default LearnHelper;
 
 AppRegistry.registerComponent('LearnHelper', () => LearnHelper);

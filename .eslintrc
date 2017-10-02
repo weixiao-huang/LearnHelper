@@ -1,0 +1,23 @@
+{
+    "extends": ["airbnb", "plugin:react-native/all"],
+    "plugins": [
+      "react-native"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/prop-types": [0],
+      "react-native/no-color-literals": [0],
+      "jsx-a11y/href-no-hash": "off",
+      "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-module": {}
+      }
+    },
+    "parser": "babel-eslint",
+    "globals": {
+      "fetch": false
+    }
+  }
+  
