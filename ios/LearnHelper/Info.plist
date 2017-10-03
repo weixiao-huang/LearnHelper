@@ -52,6 +52,11 @@
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
+            <key>tsinghua.edu.cn</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
 		</dict>
 	</dict>
 </dict>
