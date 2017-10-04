@@ -10,9 +10,9 @@ import {
 
 user = {username:'!!USERNAME HERE!!',getPassword:()=>"!!PASSWORD HERE!!"}
 
-learn_helper = new thulib.LearnHelperUtil(user)
+var learn_helper = new thulib.LearnHelperUtil(user)
 learn_helper.login();
-courses = learn_helper.getCourseList();
+var courses = learn_helper.getCourseList();
 courses.then((result) => {console.log(result)}).catch((err) => {console.log(err)})
 
 export default class Welcome extends Component {
