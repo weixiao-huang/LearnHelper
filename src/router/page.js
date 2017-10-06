@@ -2,6 +2,7 @@ import { StackNavigator } from 'react-navigation';
 
 import Login from '../pages/login';
 import Home from '../pages/home';
+import Welcome from '../pages/Welcome';
 
 const AppRouteConfigs = {
   login: {
@@ -15,6 +16,13 @@ const AppRouteConfigs = {
     screen: Home,
     navigationOptions: {
       title: 'LearnHelper',
+      gesturesEnabled: true,
+    },
+  },
+  welcome: {
+    screen: Welcome,
+    navigationOptions: {
+      title: 'Welcome',
       gesturesEnabled: true,
     },
   },
