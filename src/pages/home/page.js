@@ -10,7 +10,7 @@ import {
 export default ({ dispatch }) => (
   <ContainerView>
     <WelcomeText>
-      Please Login
+    Welcome to Learn Helper!
     </WelcomeText>
     <InstructionsText>
       To get started, edit index.ios.js
@@ -20,9 +20,9 @@ export default ({ dispatch }) => (
       Press Cmd+R to reload,{'\n'}
       Cmd+D or shake for dev menu
     </InstructionsText>
-    <TouchableOpacity onPress={() => dispatch({ type: 'NAVIGATE_TO', routeName: 'homeTab' })}>
+    <TouchableOpacity onPress={() => dispatch({ type: 'GO_BACK' })}>
       <WelcomeText>
-        Go to Home
+        Go Back To Login
       </WelcomeText>
     </TouchableOpacity>
   </ContainerView>

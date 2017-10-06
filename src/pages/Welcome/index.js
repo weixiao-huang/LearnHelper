@@ -14,6 +14,7 @@ const user = {
 
 export default class Welcome extends Component {
   async componentWillMount() {
+    console.log('Welcome has been awaked');
     const learnHelper = new thulib.LearnHelperUtil(user);
     learnHelper.login();
     try {

@@ -31,6 +31,8 @@ export default (initialState) => {
   store.runSaga = sagaMiddleware.run;
   store.close = () => store.dispatch(END);
 
+  AsyncStorage.clear();
+
   // initial redux-persist
   const opt = {
     storage: AsyncStorage,
