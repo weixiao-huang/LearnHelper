@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
+import { NavigateTo, ResetTo } from '../../router/actions';
+import { SetLearnhelper } from '../../auth/actions';
 
 import {
   ContainerView,
@@ -7,23 +9,48 @@ import {
   InstructionsText,
 } from './style';
 
-export default ({ dispatch }) => (
-  <ContainerView>
-    <WelcomeText>
-    Welcome to Learn Helper!
-    </WelcomeText>
-    <InstructionsText>
-      To get started, edit index.ios.js
-      Edit Edit Edit
-    </InstructionsText>
-    <InstructionsText>
-      Press Cmd+R to reload,{'\n'}
-      Cmd+D or shake for dev menu
-    </InstructionsText>
-    <TouchableOpacity onPress={() => dispatch({ type: 'GO_BACK' })}>
-      <WelcomeText>
-        Go Back To Login
-      </WelcomeText>
-    </TouchableOpacity>
-  </ContainerView>
-);
+export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      courses: [],
+    };
+  }
+
+  async componentWillMount() {
+    const { learnhelper } = this.props;
+    try {
+      const courses = await learnhelper.getCourseList();
+      this.setState({ courses });
+      console.log(courses);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  render() {
+    const { dispatch } = this.props;
+    return (
+      <ContainerView>
+        <TouchableOpacity
+          onPress={() => {
+            dispatch(SetLearnhelper(null));
+            dispatch(ResetTo('login'));
+          }}
+        >
+          <WelcomeText>
+            Logout
+          </WelcomeText>
+        </TouchableOpacity>
+        {this.state.courses.map(course => (
+          <InstructionsText
+            key={course._courseID}
+            onPress={() => dispatch(NavigateTo('course', { course }))}
+          >
+            {course.courseName}
+          </InstructionsText>
+        ))}
+      </ContainerView>
+    );
+  }
+}

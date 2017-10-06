@@ -52,7 +52,6 @@ export default class Login extends Component {
   }
 
   render() {
-    const { dispatch } = this.props;
     const pageContent = this.renderForm();
     return (
       <ContainerView>
@@ -67,11 +66,6 @@ export default class Login extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </InstructionsText>
-        <TouchableOpacity onPress={() => dispatch({ type: 'NAVIGATE_TO', routeName: 'welcome' })}>
-          <WelcomeText>
-            Go to Home
-          </WelcomeText>
-        </TouchableOpacity>
         { pageContent }
       </ContainerView>
     );
