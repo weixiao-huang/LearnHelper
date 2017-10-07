@@ -13,7 +13,7 @@ export default ({ dispatch, navigation: { state: { params: { course } } } }) => 
     <InstructionsText
       onPress={() => dispatch(NavigateTo('notices', { course }))}
     >
-      课程信息
+      课程公告
     </InstructionsText>
     <InstructionsText
       onPress={() => dispatch(NavigateTo('documents', { course }))}

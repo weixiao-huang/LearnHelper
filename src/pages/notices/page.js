@@ -33,7 +33,7 @@ export default class Home extends Component {
       <ContainerView>
         {this.state.notices.map(item => (
           <InstructionsText
-            key={item._courseID}
+            key={item.noticeID}
           >
             {item.title}
           </InstructionsText>
